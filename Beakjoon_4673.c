@@ -21,10 +21,4 @@ void func(int n, int arr[10000]){
     }
     arr[tmp-1] = 1;
 
-/*    if(tmp <= 10000){
-        return func(tmp, arr);
-    }
-    else
-        return;
-*/
 }
