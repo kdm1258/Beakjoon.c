@@ -8,7 +8,7 @@ int main (void){
     int countLong = 2;
     int ans = 1;
 
-    scanf("%d", &n); //¹è¿­ ±æÀÌ ÀÔ·Â¹Þ±â
+    scanf("%d", &n); //ë°°ì—´ ê¸¸ì´ ìž…ë ¥ë°›ê¸°
     scanf("%s", str);
     char* pnt = str;
 
@@ -17,14 +17,14 @@ int main (void){
     }
     else{
         //Dynamic programing
-            dp[1] = 1; //longÀÌ ÇÏ³ªµé¾îÀÖ´Â ¹®ÀÚ¿­¿¡¼­ °¡´ÉÇÑ º¯È¯Àº 1°¡Áö,
-            dp[2] = 2; //longlongÀÌ ÇÑ¹ø µé¾î ÀÖ´Â ¹®ÀÚ¿­¿¡¼­ °¡´ÉÇÑ º¯È¯Àº 2°¡ÁöÀÌ´Ù.
+            dp[1] = 1; //longì´ í•˜ë‚˜ë“¤ì–´ìžˆëŠ” ë¬¸ìžì—´ì—ì„œ ê°€ëŠ¥í•œ ë³€í™˜ì€ 1ê°€ì§€,
+            dp[2] = 2; //longlongì´ í•œë²ˆ ë“¤ì–´ ìžˆëŠ” ë¬¸ìžì—´ì—ì„œ ê°€ëŠ¥í•œ ë³€í™˜ì€ 2ê°€ì§€ì´ë‹¤.
 
             for (int i = 3 ; i <= 80 ; i++){
                 dp[i] = dp[i-1]+ dp[i-2];
             }
         while((pnt=strstr(pnt,"longlong")) != NULL){
-            if(strncmp((pnt+=4), "longlong",8)==0){   //longlongÀÇ Æ÷ÀÎÅÍ +4 ÀÇ °ªÀ» ½ÃÀÛÁ¡À¸·Î ÇÏ´Â À§Ä¡¿¡
+            if(strncmp((pnt+=4), "longlong",8)==0){   //longlongì˜ í¬ì¸í„° +4 ì˜ ê°’ì„ ì‹œìž‘ì ìœ¼ë¡œ í•˜ëŠ” ìœ„ì¹˜ì—
                 countLong++;
             }
             else if(strncmp((pnt), "long",4)==0){
