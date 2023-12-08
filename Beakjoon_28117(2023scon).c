@@ -24,7 +24,7 @@ int main (void){
                 dp[i] = dp[i-1]+ dp[i-2];
             }
         while((pnt=strstr(pnt,"longlong")) != NULL){
-            if(strncmp((pnt+=4), "longlong",8)==0){   //longlong의 포인터 +4 의 값을 시작점으로 하는 위치에
+            if(strncmp((pnt+=4), "longlong",8)==0){   //longlong의 포인터 +4 의 값을 시작점으로 하는 위치에 longlong이 반복된다면 overlab한 상황
                 countLong++;
             }
             else if(strncmp((pnt), "long",4)==0){
