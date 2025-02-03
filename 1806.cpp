@@ -18,7 +18,7 @@ int sol(){
             i++;
         }
     }
-    if(i==n+1 && j==0) return 0;
+    if(i==n+1 && j==0) return 0;    //i == n+1 && j == 0 이면 s보다 큰 수가 없는 경우
     return res;
 }
 int main(void){
