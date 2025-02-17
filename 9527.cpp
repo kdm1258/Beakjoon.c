@@ -11,7 +11,8 @@ ll sol(ll n) {
     while (n > 0) {
         int l = log2(n);
         res += S[l] + n - (1LL << l) + 1LL;
-        n = n & ~(1LL << l);
+        //n = n & ~(1LL << l); 빼기연산이 더 빠르대
+        n -= (1LL << l);
     }
     return res;
 }
