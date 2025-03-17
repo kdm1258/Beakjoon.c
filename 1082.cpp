@@ -15,7 +15,7 @@ bool compare2(int a, int b){
 void sol(int m){
     vector <int> v;
     if(P[0].first==0){
-        if(P[1].second <= m){
+        if(P.size()>1 && P[1].second <= m){
             v.push_back(P[1].first);
             m-=P[1].second;
         }
@@ -31,11 +31,7 @@ void sol(int m){
             for(int j = 0 ; j < q ; j++) v.push_back(P[i].first);
         }
     }
-    for(int i = 0 ; i < v.size() ; i++) cout<<v[i];
-    cout<<"\n";
     sort(v.begin(), v.end(), compare2);
-    for(int i = 0 ; i < v.size() ; i++) cout<<v[i];
-    cout<<"\n";
 
     for(int i = 0 ; i < v.size() ; i++){
         for(int j = n-1 ; j>0 ; j--){
